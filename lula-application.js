@@ -7,7 +7,7 @@
   }
 
   const APPS_SCRIPT_URL =
-    "https://script.google.com/macros/s/AKfycbzsvIWmKscAsh6VdXpL799gaqevuXh4ZzIYZZ1cTwxpsfmW2dZU3U_M-HVaUQKnQ7zJ/exec";
+    "https://script.google.com/macros/s/AKfycbx7IyGowhbPof55bWWxpg3MwlkUfvsdEAE__u7Q64fkfmujMPsHESXp38fZlkE5wz0w8A/exec";
 
   root.innerHTML = `
     <style>
