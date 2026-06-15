@@ -18,11 +18,16 @@
   root.innerHTML = `
     <style>
       .lula-app {
-        max-width: 760px;
-        margin: 0 auto;
-        font-family: inherit;
-        color: #111;
-      }
+  max-width: 760px;
+  margin: 0 auto;
+  font-family: inherit;
+  color: inherit;
+}
+
+.lula-app,
+.lula-app * {
+  font-family: inherit !important;
+}
 
       .lula-card {
         background: #ffffff;
