@@ -165,7 +165,7 @@
       <div class="lula-card">
         <h2>Before You Apply</h2>
         <p>
-          Please review the Lulaology Manual and the Barista Role Agreement before completing this application.
+          Please review Our Lulaology and the Barista Role Agreement before completing this application.
           Many applicants find it helpful to keep these documents open while answering the questions below.
         </p>
 
