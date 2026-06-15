@@ -287,11 +287,10 @@
         <select class="lula-select" id="yearsOfExperience" name="yearsOfExperience" required>
           <option value="">Choose one</option>
           <option value="0">0 years</option>
-          <option value="1">1 year</option>
-          <option value="2">2 years</option>
-          <option value="3">3 years</option>
-          <option value="4">4 years</option>
-          <option value="5+">5+ years</option>
+          <option value="1-2">1–2 years</option>
+          <option value="3-5">3–5 years</option>
+          <option value="6-10">6–10 years</option>
+          <option value="10+">10+ years</option>
         </select>
 
         <label class="lula-label" for="availability">Additional Availability Notes *</label>
