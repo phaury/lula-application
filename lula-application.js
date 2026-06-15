@@ -7,7 +7,13 @@
   }
 
   const APPS_SCRIPT_URL =
-    "https://script.google.com/macros/s/AKfycbx7IyGowhbPof55bWWxpg3MwlkUfvsdEAE__u7Q64fkfmujMPsHESXp38fZlkE5wz0w8A/exec";
+    "https://script.google.com/macros/s/AKfycbzsvIWmKscAsh6VdXpL799gaqevuXh4ZzIYZZ1cTwxpsfmW2dZU3U_M-HVaUQKnQ7zJ/exec";
+
+  const LULAOLOGY_URL =
+    "https://drive.google.com/file/d/1vh_0WWNJ-XNRZycdiMT-T1LoEVucWzsr/view?usp=sharing";
+
+  const ROLE_AGREEMENT_URL =
+    "https://drive.google.com/file/d/1fD1D-4APFOTNJMXPHfvM0Lo33XUUoeMB/view?usp=sharing";
 
   root.innerHTML = `
     <style>
@@ -80,21 +86,37 @@
         line-height: 1.4;
       }
 
-      .lula-button {
-        width: 100%;
+      .lula-button,
+      .lula-doc-button {
+        display: inline-block;
         padding: 16px 20px;
         border: 0;
         border-radius: 999px;
         background: #ff4fa3;
-        color: #ffffff;
+        color: #ffffff !important;
         font: inherit;
         font-size: 1.05rem;
         font-weight: 900;
         cursor: pointer;
+        text-align: center;
+        text-decoration: none;
       }
 
-      .lula-button:hover {
+      .lula-button {
+        width: 100%;
+      }
+
+      .lula-button:hover,
+      .lula-doc-button:hover {
         opacity: 0.9;
+      }
+
+      .lula-doc-buttons {
+        display: flex;
+        gap: 12px;
+        flex-wrap: wrap;
+        margin-top: 20px;
+        margin-bottom: 18px;
       }
 
       .lula-status {
@@ -131,10 +153,48 @@
         .lula-card {
           padding: 22px;
         }
+
+        .lula-doc-button {
+          width: 100%;
+          box-sizing: border-box;
+        }
       }
     </style>
 
     <form class="lula-app" id="lulaApplicationForm">
+      <div class="lula-card">
+        <h2>Before You Apply</h2>
+        <p>
+          Please review the Lulaology Manual and the Barista Role Agreement before completing this application.
+          Many applicants find it helpful to keep these documents open while answering the questions below.
+        </p>
+
+        <div class="lula-doc-buttons">
+          <a
+            href="${LULAOLOGY_URL}"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="lula-doc-button">
+            Review Lulaology
+          </a>
+
+          <a
+            href="${ROLE_AGREEMENT_URL}"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="lula-doc-button">
+            Review Barista Role Agreement
+          </a>
+        </div>
+
+        <div class="lula-checkbox-row">
+          <input type="checkbox" id="reviewedDocs" name="reviewedDocs" required>
+          <label for="reviewedDocs">
+            I have reviewed Lulaology and the Barista Role Agreement before applying.
+          </label>
+        </div>
+      </div>
+
       <div class="lula-card">
         <h2>Let's find out if Lula is your tribe.</h2>
         <p>
@@ -145,13 +205,6 @@
           Please answer thoughtfully and honestly. There are no perfect answers.
           We’re interested in how you think, how you work with others, and how you approach challenges.
         </p>
-
-        <div class="lula-checkbox-row">
-          <input type="checkbox" id="reviewedDocs" name="reviewedDocs" required>
-          <label for="reviewedDocs">
-            I have reviewed Lulaology and the role agreement before applying.
-          </label>
-        </div>
       </div>
 
       <div class="lula-card">
