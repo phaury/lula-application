@@ -17,16 +17,32 @@
 
   root.innerHTML = `
     <style>
-      .lula-app {
+.lula-app {
   max-width: 760px;
   margin: 0 auto;
-  font-family: inherit;
   color: inherit;
 }
 
 .lula-app,
-.lula-app * {
-  font-family: inherit !important;
+.lula-app *,
+.lula-app input,
+.lula-app textarea,
+.lula-app select,
+.lula-app button,
+.lula-app label,
+.lula-app p,
+.lula-app h2 {
+  font-family:
+    -apple-system,
+    BlinkMacSystemFont,
+    "Segoe UI",
+    Roboto,
+    "Helvetica Neue",
+    Arial,
+    sans-serif,
+    "Apple Color Emoji",
+    "Segoe UI Emoji",
+    "Segoe UI Symbol" !important;
 }
 
       .lula-card {
