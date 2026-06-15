@@ -6,6 +6,9 @@
     return;
   }
 
+  const APPS_SCRIPT_URL =
+    "https://script.google.com/macros/s/AKfycbzsvIWmKscAsh6VdXpL799gaqevuXh4ZzIYZZ1cTwxpsfmW2dZU3U_M-HVaUQKnQ7zJ/exec";
+
   root.innerHTML = `
     <style>
       .lula-app {
@@ -132,7 +135,6 @@
     </style>
 
     <form class="lula-app" id="lulaApplicationForm">
-
       <div class="lula-card">
         <h2>Let's find out if Lula is your tribe.</h2>
         <p>
@@ -209,11 +211,11 @@
 
         <label class="lula-label" for="resumeFile">Upload Resume *</label>
         <input class="lula-input" id="resumeFile" name="resumeFile" type="file" accept=".pdf,.doc,.docx" required>
-        <p class="lula-small">Accepted file types: PDF, DOC, DOCX.</p>
+        <p class="lula-small">Accepted file types: PDF, DOC, DOCX. Upload processing comes in the next system layer.</p>
 
         <label class="lula-label" for="viaFile">Upload VIA Character Strengths Results *</label>
         <input class="lula-input" id="viaFile" name="viaFile" type="file" accept=".pdf,.png,.jpg,.jpeg" required>
-        <p class="lula-small">Accepted file types: PDF, PNG, JPG.</p>
+        <p class="lula-small">Accepted file types: PDF, PNG, JPG. Upload processing comes in the next system layer.</p>
       </div>
 
       <div class="lula-card">
@@ -271,19 +273,61 @@
 
         <div id="lulaStatus" class="lula-status"></div>
       </div>
-
     </form>
   `;
 
   const form = document.getElementById("lulaApplicationForm");
   const status = document.getElementById("lulaStatus");
 
-  form.addEventListener("submit", function (event) {
+  form.addEventListener("submit", async function (event) {
     event.preventDefault();
 
     status.className = "lula-status success";
-    status.textContent =
-      "Test mode: application form is working. Next step is connecting this to Google Workspace.";
+    status.textContent = "Submitting your application...";
+
+    const formData = new FormData(form);
+
+    const payload = {
+      firstName: formData.get("firstName"),
+      lastName: formData.get("lastName"),
+      preferredName: formData.get("preferredName"),
+      email: formData.get("email"),
+      phone: formData.get("phone"),
+      primaryStore: formData.get("primaryStore"),
+      role: formData.get("role"),
+      earliestStartDate: formData.get("earliestStartDate"),
+      availability: formData.get("availability"),
+      q1: formData.get("q1"),
+      q2: formData.get("q2"),
+      q3: formData.get("q3"),
+      q4: formData.get("q4"),
+      q5: formData.get("q5"),
+      q6: formData.get("q6")
+    };
+
+    try {
+      await fetch(APPS_SCRIPT_URL, {
+        method: "POST",
+        mode: "no-cors",
+        headers: {
+          "Content-Type": "text/plain;charset=utf-8"
+        },
+        body: JSON.stringify(payload)
+      });
+
+      status.className = "lula-status success";
+      status.textContent =
+        "Application submitted. Thank you for applying to Lula!";
+
+      form.reset();
+
+    } catch (error) {
+      console.error(error);
+
+      status.className = "lula-status error";
+      status.textContent =
+        "Something went wrong. Please try again.";
+    }
 
     window.scrollTo({
       top: status.getBoundingClientRect().top + window.scrollY - 120,
