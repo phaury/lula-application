@@ -17,33 +17,11 @@
 
   root.innerHTML = `
     <style>
-.lula-app {
-  max-width: 760px;
-  margin: 0 auto;
-  color: inherit;
-}
-
-.lula-app,
-.lula-app *,
-.lula-app input,
-.lula-app textarea,
-.lula-app select,
-.lula-app button,
-.lula-app label,
-.lula-app p,
-.lula-app h2 {
-  font-family:
-    -apple-system,
-    BlinkMacSystemFont,
-    "Segoe UI",
-    Roboto,
-    "Helvetica Neue",
-    Arial,
-    sans-serif,
-    "Apple Color Emoji",
-    "Segoe UI Emoji",
-    "Segoe UI Symbol" !important;
-}
+      .lula-app {
+        max-width: 760px;
+        margin: 0 auto;
+        color: inherit;
+      }
 
       .lula-card {
         background: #ffffff;
@@ -107,6 +85,19 @@
         line-height: 1.4;
       }
 
+      .lula-checkbox-grid {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 10px 18px;
+        margin-top: 8px;
+      }
+
+      .lula-day-option {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+      }
+
       .lula-button,
       .lula-doc-button {
         display: inline-block;
@@ -125,11 +116,6 @@
 
       .lula-button {
         width: 100%;
-      }
-
-      .lula-button:hover,
-      .lula-doc-button:hover {
-        opacity: 0.9;
       }
 
       .lula-doc-buttons {
@@ -167,7 +153,8 @@
       }
 
       @media (max-width: 640px) {
-        .lula-two-col {
+        .lula-two-col,
+        .lula-checkbox-grid {
           grid-template-columns: 1fr;
         }
 
@@ -186,24 +173,16 @@
       <div class="lula-card">
         <h2>Before You Apply</h2>
         <p>
-          Please review Our Lulaology and the Barista Role Agreement before completing this application.
+          Please review the Lulaology Manual and the Barista Role Agreement before completing this application.
           Many applicants find it helpful to keep these documents open while answering the questions below.
         </p>
 
         <div class="lula-doc-buttons">
-          <a
-            href="${LULAOLOGY_URL}"
-            target="_blank"
-            rel="noopener noreferrer"
-            class="lula-doc-button">
+          <a href="${LULAOLOGY_URL}" target="_blank" rel="noopener noreferrer" class="lula-doc-button">
             Review Lulaology
           </a>
 
-          <a
-            href="${ROLE_AGREEMENT_URL}"
-            target="_blank"
-            rel="noopener noreferrer"
-            class="lula-doc-button">
+          <a href="${ROLE_AGREEMENT_URL}" target="_blank" rel="noopener noreferrer" class="lula-doc-button">
             Review Barista Role Agreement
           </a>
         </div>
@@ -224,7 +203,6 @@
         </p>
         <p class="lula-small">
           Please answer thoughtfully and honestly. There are no perfect answers.
-          We’re interested in how you think, how you work with others, and how you approach challenges.
         </p>
       </div>
 
@@ -254,7 +232,7 @@
       </div>
 
       <div class="lula-card">
-        <h2>Store & Availability</h2>
+        <h2>Store, Role & Availability</h2>
 
         <label class="lula-label" for="primaryStore">Primary Store Applying To *</label>
         <select class="lula-select" id="primaryStore" name="primaryStore" required>
@@ -265,18 +243,64 @@
         </select>
 
         <label class="lula-label" for="role">Role Applying For *</label>
-        <input class="lula-input" id="role" name="role" value="Barista" required>
+        <select class="lula-select" id="role" name="role" required>
+          <option value="">Choose one</option>
+          <option value="Barista">Barista</option>
+        </select>
 
         <label class="lula-label" for="earliestStartDate">Earliest Start Date *</label>
         <input class="lula-input" id="earliestStartDate" name="earliestStartDate" type="date" required>
 
-        <label class="lula-label" for="availability">Availability *</label>
+        <label class="lula-label" for="hoursPerWeek">Preferred Hours Per Week *</label>
+        <select class="lula-select" id="hoursPerWeek" name="hoursPerWeek" required>
+          <option value="">Choose one</option>
+          <option value="5">5 hours</option>
+          <option value="10">10 hours</option>
+          <option value="15">15 hours</option>
+          <option value="20">20 hours</option>
+          <option value="25">25 hours</option>
+          <option value="30">30 hours</option>
+          <option value="35">35 hours</option>
+          <option value="40">40 hours</option>
+        </select>
+
+        <label class="lula-label">Days Available *</label>
+        <div class="lula-checkbox-grid">
+          <label class="lula-day-option"><input type="checkbox" name="daysAvailable" value="Monday"> Monday</label>
+          <label class="lula-day-option"><input type="checkbox" name="daysAvailable" value="Tuesday"> Tuesday</label>
+          <label class="lula-day-option"><input type="checkbox" name="daysAvailable" value="Wednesday"> Wednesday</label>
+          <label class="lula-day-option"><input type="checkbox" name="daysAvailable" value="Thursday"> Thursday</label>
+          <label class="lula-day-option"><input type="checkbox" name="daysAvailable" value="Friday"> Friday</label>
+          <label class="lula-day-option"><input type="checkbox" name="daysAvailable" value="Saturday"> Saturday</label>
+          <label class="lula-day-option"><input type="checkbox" name="daysAvailable" value="Sunday"> Sunday</label>
+        </div>
+
+        <label class="lula-label" for="lengthOfEmployment">Desired Length of Employment *</label>
+        <select class="lula-select" id="lengthOfEmployment" name="lengthOfEmployment" required>
+          <option value="">Choose one</option>
+          <option value="3 months">3 months</option>
+          <option value="6 months">6 months</option>
+          <option value="Permanent">Permanent</option>
+        </select>
+
+        <label class="lula-label" for="yearsOfExperience">Years of Relevant Experience *</label>
+        <select class="lula-select" id="yearsOfExperience" name="yearsOfExperience" required>
+          <option value="">Choose one</option>
+          <option value="0">0 years</option>
+          <option value="1">1 year</option>
+          <option value="2">2 years</option>
+          <option value="3">3 years</option>
+          <option value="4">4 years</option>
+          <option value="5+">5+ years</option>
+        </select>
+
+        <label class="lula-label" for="availability">Additional Availability Notes *</label>
         <textarea
           class="lula-textarea"
           id="availability"
           name="availability"
           required
-          placeholder="Example: Monday mornings, Tuesday after 2pm, weekends open..."
+          placeholder="Example: I can work Monday, Wednesday, and Friday after 2pm, Saturday mornings, and I cannot work Sundays. I am flexible during school breaks."
         ></textarea>
       </div>
 
@@ -285,38 +309,30 @@
 
         <label class="lula-label" for="resumeFile">Upload Resume *</label>
         <input class="lula-input" id="resumeFile" name="resumeFile" type="file" accept=".pdf,.doc,.docx" required>
-        <p class="lula-small">Accepted file types: PDF, DOC, DOCX. Upload processing comes in the next system layer.</p>
 
         <label class="lula-label" for="viaFile">Upload VIA Character Strengths Results *</label>
         <input class="lula-input" id="viaFile" name="viaFile" type="file" accept=".pdf,.png,.jpg,.jpeg" required>
-        <p class="lula-small">Accepted file types: PDF, PNG, JPG. Upload processing comes in the next system layer.</p>
       </div>
 
       <div class="lula-card">
         <h2>Lula Application Questions</h2>
 
         <label class="lula-label" for="q1">1. Why do you want to work at Lula?</label>
-        <p class="lula-small">What about Lula stands out to you, and why do you think it would be a good fit for you?</p>
         <textarea class="lula-textarea" id="q1" name="q1" required></textarea>
 
         <label class="lula-label" for="q2">2. Tell us about one of your favorite things you’ve learned how to do.</label>
-        <p class="lula-small">What did it take to learn that skill? Were there moments you wanted to give up? If so, what helped you keep going?</p>
         <textarea class="lula-textarea" id="q2" name="q2" required></textarea>
 
         <label class="lula-label" for="q3">3. What does it mean to belong at Lula?</label>
-        <p class="lula-small">In your own words, describe what belonging means on a team and in a workplace.</p>
         <textarea class="lula-textarea" id="q3" name="q3" required></textarea>
 
         <label class="lula-label" for="q4">4. A customer doesn’t like their drink. What would you do?</label>
-        <p class="lula-small">Describe how you would handle the situation.</p>
         <textarea class="lula-textarea" id="q4" name="q4" required></textarea>
 
         <label class="lula-label" for="q5">5. A customer asks for an item that is sold out or unavailable. What would you do?</label>
-        <p class="lula-small">Describe how you would handle the situation while still creating a positive experience.</p>
         <textarea class="lula-textarea" id="q5" name="q5" required></textarea>
 
         <label class="lula-label" for="q6">6. You notice a teammate falling behind during a busy rush. What would you do?</label>
-        <p class="lula-small">Describe how you would respond.</p>
         <textarea class="lula-textarea" id="q6" name="q6" required></textarea>
       </div>
 
@@ -356,6 +372,16 @@
   form.addEventListener("submit", async function (event) {
     event.preventDefault();
 
+    const selectedDays = Array.from(
+      form.querySelectorAll('input[name="daysAvailable"]:checked')
+    ).map(input => input.value);
+
+    if (selectedDays.length === 0) {
+      status.className = "lula-status error";
+      status.textContent = "Please select at least one day you are available.";
+      return;
+    }
+
     status.className = "lula-status success";
     status.textContent = "Submitting your application...";
 
@@ -370,6 +396,10 @@
       primaryStore: formData.get("primaryStore"),
       role: formData.get("role"),
       earliestStartDate: formData.get("earliestStartDate"),
+      hoursPerWeek: formData.get("hoursPerWeek"),
+      daysAvailable: selectedDays.join(", "),
+      lengthOfEmployment: formData.get("lengthOfEmployment"),
+      yearsOfExperience: formData.get("yearsOfExperience"),
       availability: formData.get("availability"),
       q1: formData.get("q1"),
       q2: formData.get("q2"),
@@ -402,10 +432,5 @@
       status.textContent =
         "Something went wrong. Please try again.";
     }
-
-    window.scrollTo({
-      top: status.getBoundingClientRect().top + window.scrollY - 120,
-      behavior: "smooth"
-    });
   });
 })();
