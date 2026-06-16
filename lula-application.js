@@ -376,6 +376,26 @@
   const form = document.getElementById("lulaApplicationForm");
   const status = document.getElementById("lulaStatus");
 
+  const phoneInput = document.getElementById("phone");
+
+phoneInput.addEventListener("input", function (e) {
+  let value = e.target.value.replace(/\D/g, "");
+
+  if (value.length > 10) {
+    value = value.substring(0, 10);
+  }
+
+  if (value.length > 6) {
+    value = `(${value.substring(0,3)}) ${value.substring(3,6)}-${value.substring(6)}`;
+  } else if (value.length > 3) {
+    value = `(${value.substring(0,3)}) ${value.substring(3)}`;
+  } else if (value.length > 0) {
+    value = `(${value}`;
+  }
+
+  e.target.value = value;
+});
+
   form.addEventListener("submit", async function (event) {
     event.preventDefault();
 
