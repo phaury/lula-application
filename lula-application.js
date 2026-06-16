@@ -228,7 +228,15 @@
         <input class="lula-input" id="email" name="email" type="email" required>
 
         <label class="lula-label" for="phone">Phone *</label>
-        <input class="lula-input" id="phone" name="phone" type="tel" required>
+        <input
+          class="lula-input"
+          id="phone"
+          name="phone"
+          type="tel"
+          placeholder="(206) 555-1234"
+          maxlength="14"
+          required
+        >
       </div>
 
       <div class="lula-card">
