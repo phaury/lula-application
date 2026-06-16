@@ -196,7 +196,6 @@
       </div>
 
       <div class="lula-card">
-        <h2>Let's find out if Lula is your tribe.</h2>
         <p>
           At Lula, we believe great coffee starts with great people.
           We hire for Self-Efficacy, Kindness, and Optimistic Care.
