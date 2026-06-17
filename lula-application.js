@@ -7,7 +7,7 @@
   }
 
   const APPS_SCRIPT_URL =
-    "https://script.google.com/macros/s/AKfycbwAbKrWsy55-rhVlVbMqWBHCtdDJx2T4MNkHmaWzh17QgUcmsn2pP8cnMtdb3uqQIf62w/exec";
+    "https://script.google.com/macros/s/AKfycbyDdK5IlGlkwI4a89VIzagdarmSceM_PKFLdvKn_0nRFJnlnANbvKQNVGdY9QHEDNwMtA/exec";
 
   const LULAOLOGY_URL =
     "https://drive.google.com/file/d/1vh_0WWNJ-XNRZycdiMT-T1LoEVucWzsr/view?usp=sharing";
@@ -196,6 +196,7 @@
       </div>
 
       <div class="lula-card">
+        <h2>Let's find out if Lula is your tribe.</h2>
         <p>
           At Lula, we believe great coffee starts with great people.
           We hire for Self-Efficacy, Kindness, and Optimistic Care.
@@ -315,9 +316,11 @@
 
         <label class="lula-label" for="resumeFile">Upload Resume *</label>
         <input class="lula-input" id="resumeFile" name="resumeFile" type="file" accept=".pdf,.doc,.docx" required>
+        <p class="lula-small">Maximum file size: 5 MB.</p>
 
         <label class="lula-label" for="viaFile">Upload VIA Character Strengths Results *</label>
         <input class="lula-input" id="viaFile" name="viaFile" type="file" accept=".pdf,.png,.jpg,.jpeg" required>
+        <p class="lula-small">Maximum file size: 5 MB.</p>
       </div>
 
       <div class="lula-card">
@@ -374,26 +377,54 @@
 
   const form = document.getElementById("lulaApplicationForm");
   const status = document.getElementById("lulaStatus");
-
   const phoneInput = document.getElementById("phone");
 
-phoneInput.addEventListener("input", function (e) {
-  let value = e.target.value.replace(/\D/g, "");
+  phoneInput.addEventListener("input", function (e) {
+    let value = e.target.value.replace(/\D/g, "");
 
-  if (value.length > 10) {
-    value = value.substring(0, 10);
+    if (value.length > 10) {
+      value = value.substring(0, 10);
+    }
+
+    if (value.length > 6) {
+      value = `(${value.substring(0, 3)}) ${value.substring(3, 6)}-${value.substring(6)}`;
+    } else if (value.length > 3) {
+      value = `(${value.substring(0, 3)}) ${value.substring(3)}`;
+    } else if (value.length > 0) {
+      value = `(${value}`;
+    }
+
+    e.target.value = value;
+  });
+
+  function fileToBase64(file) {
+    return new Promise((resolve, reject) => {
+      if (!file) {
+        resolve(null);
+        return;
+      }
+
+      const maxSize = 5 * 1024 * 1024;
+
+      if (file.size > maxSize) {
+        reject(new Error(`${file.name} is too large. Max file size is 5 MB.`));
+        return;
+      }
+
+      const reader = new FileReader();
+
+      reader.onload = () => {
+        resolve({
+          name: file.name,
+          type: file.type,
+          data: reader.result.split(",")[1]
+        });
+      };
+
+      reader.onerror = reject;
+      reader.readAsDataURL(file);
+    });
   }
-
-  if (value.length > 6) {
-    value = `(${value.substring(0,3)}) ${value.substring(3,6)}-${value.substring(6)}`;
-  } else if (value.length > 3) {
-    value = `(${value.substring(0,3)}) ${value.substring(3)}`;
-  } else if (value.length > 0) {
-    value = `(${value}`;
-  }
-
-  e.target.value = value;
-});
 
   form.addEventListener("submit", async function (event) {
     event.preventDefault();
@@ -413,29 +444,34 @@ phoneInput.addEventListener("input", function (e) {
 
     const formData = new FormData(form);
 
-    const payload = {
-      firstName: formData.get("firstName"),
-      lastName: formData.get("lastName"),
-      preferredName: formData.get("preferredName"),
-      email: formData.get("email"),
-      phone: formData.get("phone"),
-      primaryStore: formData.get("primaryStore"),
-      role: formData.get("role"),
-      earliestStartDate: formData.get("earliestStartDate"),
-      hoursPerWeek: formData.get("hoursPerWeek"),
-      daysAvailable: selectedDays.join(", "),
-      lengthOfEmployment: formData.get("lengthOfEmployment"),
-      yearsOfExperience: formData.get("yearsOfExperience"),
-      availability: formData.get("availability"),
-      q1: formData.get("q1"),
-      q2: formData.get("q2"),
-      q3: formData.get("q3"),
-      q4: formData.get("q4"),
-      q5: formData.get("q5"),
-      q6: formData.get("q6")
-    };
-
     try {
+      const resumeUpload = await fileToBase64(formData.get("resumeFile"));
+      const viaUpload = await fileToBase64(formData.get("viaFile"));
+
+      const payload = {
+        firstName: formData.get("firstName"),
+        lastName: formData.get("lastName"),
+        preferredName: formData.get("preferredName"),
+        email: formData.get("email"),
+        phone: formData.get("phone"),
+        primaryStore: formData.get("primaryStore"),
+        role: formData.get("role"),
+        earliestStartDate: formData.get("earliestStartDate"),
+        hoursPerWeek: formData.get("hoursPerWeek"),
+        daysAvailable: selectedDays.join(", "),
+        lengthOfEmployment: formData.get("lengthOfEmployment"),
+        yearsOfExperience: formData.get("yearsOfExperience"),
+        availability: formData.get("availability"),
+        q1: formData.get("q1"),
+        q2: formData.get("q2"),
+        q3: formData.get("q3"),
+        q4: formData.get("q4"),
+        q5: formData.get("q5"),
+        q6: formData.get("q6"),
+        resumeFile: resumeUpload,
+        viaFile: viaUpload
+      };
+
       await fetch(APPS_SCRIPT_URL, {
         method: "POST",
         mode: "no-cors",
@@ -455,8 +491,7 @@ phoneInput.addEventListener("input", function (e) {
       console.error(error);
 
       status.className = "lula-status error";
-      status.textContent =
-        "Something went wrong. Please try again.";
+      status.textContent = error.message || "Something went wrong. Please try again.";
     }
   });
 })();
