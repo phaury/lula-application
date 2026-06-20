@@ -15,6 +15,9 @@
   const ROLE_AGREEMENT_URL =
     "https://drive.google.com/file/d/1fD1D-4APFOTNJMXPHfvM0Lo33XUUoeMB/view?usp=sharing";
 
+  const VIA_INSTRUCTIONS_URL =
+    "https://drive.google.com/file/d/1lDOf-L2eWZn941FLXCOAmkTV6AqMJYAd/view?usp=sharing";
+
   root.innerHTML = `
     <style>
       .lula-app {
@@ -173,17 +176,26 @@
       <div class="lula-card">
         <h2>Before You Apply</h2>
         <p>
-          Please review the Lulaology Manual and the Barista Role Agreement before completing this application.
-          Many applicants find it helpful to keep these documents open while answering the questions below.
+          To help you with your application for this role, please review the Lulaology Manual and the Barista Role Agreement before completing this application.
         </p>
-
+        <p>
+          Additionally, you will need to complete the VIA Character Strengths Survey, download your results as a PDF, and upload those results along with your resume as part of your application.
+        </p>
+        <p>
+          To make this easy, we’ve provided a step-by-step guide that walks you through creating your VIA account, taking the assessment, downloading your results PDF, and avoiding common mistakes during the process.
+        </p>
+        
         <div class="lula-doc-buttons">
           <a href="${LULAOLOGY_URL}" target="_blank" rel="noopener noreferrer" class="lula-doc-button">
             Review Lulaology
           </a>
-
+        
           <a href="${ROLE_AGREEMENT_URL}" target="_blank" rel="noopener noreferrer" class="lula-doc-button">
             Review Barista Role Agreement
+          </a>
+        
+          <a href="${VIA_INSTRUCTIONS_URL}" target="_blank" rel="noopener noreferrer" class="lula-doc-button">
+            Complete the VIA Character Strengths Assessment
           </a>
         </div>
 
