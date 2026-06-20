@@ -7,7 +7,7 @@
   }
 
   const APPS_SCRIPT_URL =
-    "https://script.google.com/macros/s/AKfycbyRNwYIvBglXBmuECqj7M9_0b0o3vwrgUXJPV7H8W1Y_rGZDb3ipNnLKA1uxg3RzmPteg/exec";
+    "https://script.google.com/macros/s/AKfycbwVRtQmfTDq36n7irFz_J58P3ocpC55N4Tq-7_WZ1SkYRFjkJhdKxy0HzkfyuKHjAMs1g/exec";
 
   const LULAOLOGY_URL =
     "https://drive.google.com/file/d/1vh_0WWNJ-XNRZycdiMT-T1LoEVucWzsr/view?usp=sharing";
@@ -49,6 +49,23 @@
         display: block;
         font-weight: 800;
         margin: 18px 0 7px;
+      }
+
+      .lula-section-heading {
+        color: #ff4fa3;
+        font-weight: 900;
+        font-size: 1.15rem;
+        margin-top: 28px;
+        padding-bottom: 6px;
+        border-bottom: 2px solid #ff4fa3;
+      }
+
+      .lula-question-help {
+        margin: -2px 0 8px;
+        font-size: 0.92rem;
+        opacity: 0.72;
+        font-style: italic;
+        line-height: 1.35;
       }
 
       .lula-input,
@@ -209,12 +226,13 @@
 
       <div class="lula-card">
         <h2>Let's find out if Lula is your tribe.</h2>
+        <p><strong>At Lula, we believe great coffee starts with great people.</strong></p>
         <p>
-          At Lula, we believe great coffee starts with great people.
-          We hire for Self-Efficacy, Kindness, and Optimistic Care.
+          Our core values are Self-Efficacy, Kindness, and Optimistic Care.
         </p>
-        <p class="lula-small">
-          Please answer thoughtfully and honestly. There are no perfect answers.
+        <p>
+          Please answer the following questions thoughtfully and honestly. There are no perfect answers.
+          We’re interested in how you think, how you work with others, and how you approach challenges.
         </p>
       </div>
 
@@ -338,23 +356,41 @@
       <div class="lula-card">
         <h2>Lula Application Questions</h2>
 
-        <label class="lula-label" for="q1">1. Why do you want to work at Lula?</label>
+        <div class="lula-section-heading">Self-Efficacy</div>
+
+        <label class="lula-label" for="q1">1. Tell us about one of your favorite things you’ve learned how to do.</label>
+        <div class="lula-question-help">What did it take to learn that skill? Were there moments you wanted to give up? If so, what helped you keep going?</div>
         <textarea class="lula-textarea" id="q1" name="q1" required></textarea>
 
-        <label class="lula-label" for="q2">2. Tell us about one of your favorite things you’ve learned how to do.</label>
+        <label class="lula-label" for="q2">2. Tell us about a time you had to figure something out without being shown first.</label>
+        <div class="lula-question-help">How did you approach it? What did you do when you weren’t sure?</div>
         <textarea class="lula-textarea" id="q2" name="q2" required></textarea>
 
-        <label class="lula-label" for="q3">3. What does it mean to belong at Lula?</label>
+        <div class="lula-section-heading">Kindness</div>
+
+        <label class="lula-label" for="q3">3. Tell us about a time you made someone feel welcome — even when you didn’t know them.</label>
+        <div class="lula-question-help">What did you notice, and what did you do?</div>
         <textarea class="lula-textarea" id="q3" name="q3" required></textarea>
 
-        <label class="lula-label" for="q4">4. A customer doesn’t like their drink. What would you do?</label>
+        <label class="lula-label" for="q4">4. A customer is short with you — not terrible, but clearly having a bad day. How would you respond?</label>
+        <div class="lula-question-help">Describe how you would handle the moment.</div>
         <textarea class="lula-textarea" id="q4" name="q4" required></textarea>
 
-        <label class="lula-label" for="q5">5. A customer asks for an item that is sold out or unavailable. What would you do?</label>
+        <div class="lula-section-heading">Optimistic Care</div>
+
+        <label class="lula-label" for="q5">5. Tell us about a time something went wrong — how did you handle it?</label>
+        <div class="lula-question-help">What happened, and what did you do next?</div>
         <textarea class="lula-textarea" id="q5" name="q5" required></textarea>
 
         <label class="lula-label" for="q6">6. You notice a teammate falling behind during a busy rush. What would you do?</label>
+        <div class="lula-question-help">Describe how you would respond.</div>
         <textarea class="lula-textarea" id="q6" name="q6" required></textarea>
+
+        <div class="lula-section-heading">Bonus</div>
+
+        <label class="lula-label" for="q7">★. Why Lula?</label>
+        <div class="lula-question-help">What drew you to Lula, and why do you think it’s a good fit — both for you and for us?</div>
+        <textarea class="lula-textarea" id="q7" name="q7" required></textarea>
       </div>
 
       <div class="lula-card">
@@ -480,6 +516,7 @@
         q4: formData.get("q4"),
         q5: formData.get("q5"),
         q6: formData.get("q6"),
+        q7: formData.get("q7"),
         resumeFile: resumeUpload,
         viaFile: viaUpload
       };
