@@ -201,16 +201,16 @@
         <p>
           To make this easy, we’ve provided a step-by-step guide that walks you through creating your VIA account, taking the assessment, downloading your results PDF, and avoiding common mistakes during the process.
         </p>
-        
+
         <div class="lula-doc-buttons">
           <a href="${LULAOLOGY_URL}" target="_blank" rel="noopener noreferrer" class="lula-doc-button">
             Review Lulaology
           </a>
-        
+
           <a href="${ROLE_AGREEMENT_URL}" target="_blank" rel="noopener noreferrer" class="lula-doc-button">
             Review Barista Role Agreement
           </a>
-        
+
           <a href="${VIA_INSTRUCTIONS_URL}" target="_blank" rel="noopener noreferrer" class="lula-doc-button">
             Complete the VIA Character Strengths Assessment
           </a>
