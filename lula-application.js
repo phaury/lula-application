@@ -337,7 +337,7 @@
           id="availability"
           name="availability"
           required
-          placeholder="Example: I can work Monday, Wednesday, and Friday after 2pm, Saturday mornings, and I cannot work Sundays. I am flexible during school breaks."
+          placeholder="Example: I can work Monday, Wednesday, and Friday after 2pm, Saturday mornings, and I cannot work Sundays. I am flexible during school breaks. I leave for school on such date. I have a scheduled vacation between the days or weeks of..."
         ></textarea>
       </div>
 
