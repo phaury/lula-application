@@ -7,7 +7,7 @@
   }
 
   const APPS_SCRIPT_URL =
-    "https://script.google.com/macros/s/AKfycbywgNpSEmKqDfvqfqhdvl-4Mw3aB73ZF59Aao-YLQiP0JlkfcoG0LU3xS4oUUIlg6gQ2w/exec";
+    "https://script.google.com/macros/s/AKfycbyFf_tpmKCdXLAGUHVFXZtYjAcON1fE3-nTfK0RlOwvOQn55nsUyNyVV7M1Bx3t3jb6JQ/exec";
 
   const LULAOLOGY_URL =
     "https://drive.google.com/file/d/1vh_0WWNJ-XNRZycdiMT-T1LoEVucWzsr/view?usp=sharing";
@@ -195,10 +195,10 @@
       <div class="lula-card">
         <h2>Before You Apply</h2>
         <p>
-          To help you with your application for this role, please review the Lulaology Manual and the Barista Role Agreement before completing this application.
+          To help you with your application for this role, please review the Lulaology Manual and the Barista Role Agreement before completing this application.<br>
         </p>
         <p>
-          Additionally, you will need to complete the VIA Character Strengths Survey, download your results as a PDF, and upload those results along with your resume as part of your application.
+          Additionally, you will need to complete the VIA Character Strengths Survey, download your results as a PDF, and upload those results along with your resume as part of your application.<br>
         </p>
         <p>
           To make this easy, we’ve provided a step-by-step guide that walks you through creating your VIA account, taking the assessment, downloading your results PDF, and avoiding common mistakes during the process.
@@ -400,7 +400,9 @@
 
         <div class="lula-checkbox-row">
           <input type="checkbox" id="accurateInfo" name="accurateInfo" required>
-          <label for="accurateInfo">I certify that the information I provided is accurate.</label>
+          <label for="accurateInfo">
+            I certify that the information I provided is accurate.
+          </label>
         </div>
 
         <div class="lula-checkbox-row">
