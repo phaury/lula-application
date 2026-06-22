@@ -228,10 +228,11 @@
 
       <div class="lula-card">
         <h2>Let's find out if Lula is your tribe.</h2>
-        <p><strong>At Lula, we believe great coffee starts with great people.</strong></p>
+        <p><strong>At Lula, we believe a great coffee experience starts with our great people.</strong></p>
         <p>
           Our core values are Self-Efficacy, Kindness, and Optimistic Care.
         </p>
+        <br>
         <p>
           Please answer the following questions thoughtfully and honestly. There are no perfect answers.
           We’re interested in how you think, how you work with others, and how you approach challenges.
