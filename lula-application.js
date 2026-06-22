@@ -409,7 +409,7 @@
       </div>
 
       <div class="lula-card">
-        <h2><strong>Final Agreement</strong></h2>
+        <h2><strong>Application Agreement</strong></h2>
 
         <div class="lula-checkbox-row">
           <input type="checkbox" id="accurateInfo" name="accurateInfo" required>
