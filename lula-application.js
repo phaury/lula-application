@@ -111,15 +111,20 @@
 
       .lula-checkbox-grid {
         display: grid;
-        grid-template-columns: repeat(2, minmax(0, 1fr));
-        gap: 10px 18px;
+        grid-template-columns: 1fr 1fr;
+        gap: 12px 40px;
         margin-top: 8px;
       }
-
+      
       .lula-day-option {
-        display: flex;
+        display: grid;
+        grid-template-columns: 20px 1fr;
         align-items: center;
         gap: 8px;
+      }
+      
+      .lula-day-option input {
+        margin: 0;
       }
 
       .lula-button,
