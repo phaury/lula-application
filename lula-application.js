@@ -94,16 +94,18 @@
 
       .lula-checkbox-row {
         display: flex;
-        gap: 10px;
+        gap: 12px;
         align-items: flex-start;
         margin-top: 16px;
       }
-
+      
       .lula-checkbox-row input {
+        flex-shrink: 0;
         margin-top: 4px;
       }
-
+      
       .lula-checkbox-row label {
+        flex: 1;
         line-height: 1.4;
       }
 
