@@ -252,7 +252,6 @@
       <div class="lula-card">
         <h2><strong>About You</strong></h2>
 
-        <div class="lula-two-col">
           <div>
             <label class="lula-label" for="firstName">First Name *</label>
             <input class="lula-input" id="firstName" name="firstName" required>
@@ -262,7 +261,6 @@
             <label class="lula-label" for="lastName">Last Name *</label>
             <input class="lula-input" id="lastName" name="lastName" required>
           </div>
-        </div>
 
         <label class="lula-label" for="preferredName">Preferred Name</label>
         <input class="lula-input" id="preferredName" name="preferredName">
