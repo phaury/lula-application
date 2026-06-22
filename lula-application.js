@@ -49,13 +49,13 @@
 
       .lula-label {
         display: block;
-        font-weight: 800;
+        font-weight: 600;
         margin: 18px 0 7px;
       }
 
       .lula-section-heading {
         color: #ff4fa3;
-        font-weight: 900;
+        font-weight: 600;
         font-size: 1.15rem;
         margin-top: 28px;
         padding-bottom: 6px;
@@ -141,7 +141,7 @@
         color: #ffffff !important;
         font-family: inherit;
         font-size: 1.05rem;
-        font-weight: 900;
+        font-weight: 600;
         cursor: pointer;
         text-align: center;
         text-decoration: none;
@@ -163,7 +163,7 @@
         margin-top: 18px;
         padding: 14px;
         border-radius: 12px;
-        font-weight: 800;
+        font-weight: 600;
         display: none;
       }
 
