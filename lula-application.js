@@ -193,13 +193,15 @@
 
     <form class="lula-app" id="lulaApplicationForm">
       <div class="lula-card">
-        <h2>Before You Apply</h2>
+        <h2><strong>Before You Apply</strong></h2>
         <p>
-          To help you with your application for this role, please review the Lulaology Manual and the Barista Role Agreement before completing this application.<br>
+          To help you with your application for this role, please review the Lulaology Manual and the Barista Role Agreement before completing this application.
         </p>
+        <br>
         <p>
           Additionally, you will need to complete the VIA Character Strengths Survey, download your results as a PDF, and upload those results along with your resume as part of your application.<br>
         </p>
+        <br>
         <p>
           To make this easy, we’ve provided a step-by-step guide that walks you through creating your VIA account, taking the assessment, downloading your results PDF, and avoiding common mistakes during the process.
         </p>
@@ -227,8 +229,9 @@
       </div>
 
       <div class="lula-card">
-        <h2>Let's find out if Lula is your tribe.</h2>
+        <h2><strong>Let's find out if Lula is your tribe.</strong></h2>
         <p><strong>At Lula, we believe a great coffee experience starts with our great people.</strong></p>
+        <br>
         <p>
           Our core values are Self-Efficacy, Kindness, and Optimistic Care.
         </p>
@@ -240,7 +243,7 @@
       </div>
 
       <div class="lula-card">
-        <h2>About You</h2>
+        <h2><strong>About You</strong></h2>
 
         <div class="lula-two-col">
           <div>
@@ -273,7 +276,7 @@
       </div>
 
       <div class="lula-card">
-        <h2>Store, Role & Availability</h2>
+        <h2><strong>Store, Role & Availability</strong></h2>
 
         <label class="lula-label" for="primaryStore">Primary Store Applying To *</label>
         <select class="lula-select" id="primaryStore" name="primaryStore" required>
@@ -345,7 +348,7 @@
       </div>
 
       <div class="lula-card">
-        <h2>Uploads</h2>
+        <h2><strong>Uploads</strong></h2>
 
         <label class="lula-label" for="resumeFile">Upload Resume *</label>
         <input class="lula-input" id="resumeFile" name="resumeFile" type="file" accept=".pdf,.doc,.docx" required>
@@ -357,7 +360,7 @@
       </div>
 
       <div class="lula-card">
-        <h2>Lula Application Questions</h2>
+        <h2><strong>Lula Application Questions</strong></h2>
 
         <div class="lula-section-heading">Self-Efficacy</div>
 
@@ -397,7 +400,7 @@
       </div>
 
       <div class="lula-card">
-        <h2>Final Agreement</h2>
+        <h2><strong>Final Agreement</strong></h2>
 
         <div class="lula-checkbox-row">
           <input type="checkbox" id="accurateInfo" name="accurateInfo" required>
