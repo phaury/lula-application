@@ -79,6 +79,7 @@
         border: 1px solid #d8d8d8;
         border-radius: 12px;
         font-family: inherit;
+        font-size: 1.15rem;
         background: #fff;
       }
 
