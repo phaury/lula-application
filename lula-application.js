@@ -54,12 +54,12 @@
       }
 
       .lula-section-heading {
-        color: #ff4fa3;
+        color: #919cd4;
         font-weight: 600;
         font-size: 1.15rem;
         margin-top: 28px;
         padding-bottom: 6px;
-        border-bottom: 2px solid #ff4fa3;
+        border-bottom: 2px solid #919cd4;
       }
 
       .lula-question-help {
@@ -137,7 +137,7 @@
         padding: 16px 20px;
         border: 0;
         border-radius: 999px;
-        background: #ff4fa3;
+        background: #919cd4;
         color: #ffffff !important;
         font-family: inherit;
         font-size: 1.05rem;
