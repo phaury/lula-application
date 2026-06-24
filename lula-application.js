@@ -379,7 +379,7 @@
         <div class="lula-question-help">How did you approach it? What did you do when you weren’t sure?</div>
         <textarea class="lula-textarea" id="q2" name="q2" required></textarea>
 
-        <div class="lula-section-heading">Kindness</div>
+        <div class="lula-section-heading">Kindness</div> Creating warmth, welcome, and consideration through everyday moments
 
         <label class="lula-label" for="q3">3. Tell us about a time you made someone feel welcome — even when you didn’t know them.</label>
         <div class="lula-question-help">What did you notice, and what did you do?</div>
@@ -389,7 +389,7 @@
         <div class="lula-question-help">Describe how you would handle the moment.</div>
         <textarea class="lula-textarea" id="q4" name="q4" required></textarea>
 
-        <div class="lula-section-heading">Optimistic Care</div>
+        <div class="lula-section-heading">Optimistic Care</div> Bringing hope, uplift, and belief into every action I take so people leave feeling lighter and more capable
 
         <label class="lula-label" for="q5">5. Tell us about a time something went wrong — how did you handle it?</label>
         <div class="lula-question-help">What happened, and what did you do next?</div>
