@@ -369,7 +369,7 @@
       <div class="lula-card">
         <h2><strong>Lula Application Questions</strong></h2>
 
-        <div class="lula-section-heading">Self-Efficacy</div>
+        <div class="lula-section-heading">Self-Efficacy</div> Belief in oneself to do and be personally able to do what you choose
 
         <label class="lula-label" for="q1">1. Tell us about one of your favorite things you’ve learned how to do.</label>
         <div class="lula-question-help">What did it take to learn that skill? Were there moments you wanted to give up? If so, what helped you keep going?</div>
