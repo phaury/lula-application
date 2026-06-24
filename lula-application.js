@@ -112,19 +112,15 @@
 
       .lula-checkbox-grid {
         display: grid;
-        grid-template-columns: 1fr 1fr;
-        column-gap: 64px;
+        grid-template-columns: 1fr;
         row-gap: 10px;
         margin-top: 8px;
-        justify-items: start;
       }
       
       .lula-day-option {
         display: flex;
         align-items: center;
         gap: 8px;
-        width: 160px;
-        justify-content: flex-start;
       }
       
       .lula-day-option input {
@@ -332,9 +328,10 @@
         <label class="lula-label" for="lengthOfEmployment">Desired Length of Employment *</label>
         <select class="lula-select" id="lengthOfEmployment" name="lengthOfEmployment" required>
           <option value="">Choose one</option>
-          <option value="3 months">3 months</option>
-          <option value="6 months">6 months</option>
-          <option value="Permanent">Permanent</option>
+          <option value="0-3 months">0-3 months</option>
+          <option value="3-6 months">3-6 months</option>
+          <option value="6-12 months">6-12 months</option>
+          <option value="Long Term">Long Term</option>
         </select>
 
         <label class="lula-label" for="yearsOfExperience">Years of Relevant Experience *</label>
