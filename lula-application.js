@@ -20,12 +20,15 @@
 
   root.innerHTML = `
     <style>
-      .lula-app,
-      .lula-app * {
+      .lula-app {
         max-width: 760px;
         margin: 0 auto;
         color: inherit;
-        font-family: 'Poppins', sans-serif !important;
+        font-family: 'Poppins', sans-serif;
+      }
+      
+      .lula-app * {
+        font-family: inherit;
       }
 
       .lula-card {
