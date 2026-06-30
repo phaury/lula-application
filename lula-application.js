@@ -7,7 +7,7 @@
   }
 
   const APPS_SCRIPT_URL =
-    "https://script.google.com/macros/s/AKfycbzcTrMxKhlkn3EVyjizxHmNWX1e1Qb9Y2zg56WETxEHwQskPSRHbgYQqpwUqyJAI9FHyA/exec";
+    "https://script.google.com/macros/s/AKfycbzPhX0aToJCm2-CSd20oFti282uPMp3kEgBFwtvnGFBs4ymFCNtlvml10s6MCGFlydnQw/exec";
 
   const LULAOLOGY_URL =
     "https://drive.google.com/file/d/1vh_0WWNJ-XNRZycdiMT-T1LoEVucWzsr/view?usp=sharing";
