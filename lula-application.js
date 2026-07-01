@@ -304,7 +304,7 @@
         <label class="lula-label" for="earliestStartDate">Earliest Start Date *</label>
         <input class="lula-input" id="earliestStartDate" name="earliestStartDate" type="date" required>
 
-        <label class="lula-label" for="hoursPerWeek">Preferred Hours Per Week *</label>
+        <label class="lula-label" for="hoursPerWeek">Preferred Hours Per Week * (Typical shift = 5-7 hours)</label>
         <select class="lula-select" id="hoursPerWeek" name="hoursPerWeek" required>
           <option value="">Choose one</option>
           <option value="5">5 hours</option>
