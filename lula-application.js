@@ -241,15 +241,14 @@
 
       <div class="lula-card">
         <h2><strong>Let's find out if Lula is your tribe.</strong></h2>
-        <p><strong>At Lula, we believe a great coffee experience starts with our great people.</strong></p>
+        <p><strong>We're interested in more than your experience.</strong></p>
         <br>
         <p>
-          Our core values are Self-Efficacy, Kindness, and Optimistic Care.
+          Your application, resume, VIA Character Strengths, and written responses help us understand who you are, how you work with others, and whether Lula is the right tribe for you—and you for Lula.
         </p>
         <br>
         <p>
-          Please answer the following questions thoughtfully and honestly. There are no perfect answers.
-          We’re interested in how you think, how you work with others, and how you approach challenges.
+          Take your time, be yourself, and answer thoughtfully. There are no perfect answers—only honest ones.
         </p>
       </div>
 
@@ -506,7 +505,7 @@
     }
 
     status.className = "lula-status success";
-    status.textContent = "Submitting your application...";
+    status.innerHTML = "<strong>Thank you for applying to join Lula Coffee Co.</strong><br><br>Please wait while we securely upload your application, resume, and VIA Character Strengths results to the Lula Hiring System.<br><br><strong>This may take a minute or two. Please don't close this page until the upload is complete.</strong>";
 
     const formData = new FormData(form);
 
@@ -549,8 +548,8 @@
       });
 
       status.className = "lula-status success";
-      status.textContent =
-        "Application submitted. Thank you for applying to Lula!";
+      status.innerHTML =
+        "<strong>Thank you for applying to join Lula Coffee Co.</strong><br><br>Your application has been successfully received.<br><br><strong>Now let's find out if Lula is your tribe.</strong><br><br>We'll thoughtfully review your application, resume, VIA Character Strengths, and written responses to learn more about who you are and how you show up for others.<br><br>If it looks like there may be a strong mutual fit, we'll reach out with the next step in our hiring process.<br><br>Thank you for the time, care, and effort you've invested in your application. We look forward to getting to know you.";
 
       form.reset();
 
