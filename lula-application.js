@@ -308,13 +308,13 @@
         <select class="lula-select" id="hoursPerWeek" name="hoursPerWeek" required>
           <option value="">Choose one</option>
           <option value="5">5 hours</option>
-          <option value="10">10 hours</option>
-          <option value="15">15 hours</option>
-          <option value="20">20 hours</option>
-          <option value="25">25 hours</option>
-          <option value="30">30 hours</option>
-          <option value="35">35 hours</option>
-          <option value="40">40 hours</option>
+          <option value="5-10">5-10 hours</option>
+          <option value="10-15">10-15 hours</option>
+          <option value="15-20">15-20 hours</option>
+          <option value="20-25">20-25 hours</option>
+          <option value="25-30">25-30 hours</option>
+          <option value="30-35">30-35 hours</option>
+          <option value="35-40">35-40 hours</option>
         </select>
 
         <label class="lula-label">Days Available *</label>
