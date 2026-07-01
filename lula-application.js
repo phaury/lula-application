@@ -5,7 +5,7 @@
     console.error("Lula application root not found.");
     return;
   }
-
+/* this URL should stay constant */
   const APPS_SCRIPT_URL =
     "https://script.google.com/macros/s/AKfycbzPhX0aToJCm2-CSd20oFti282uPMp3kEgBFwtvnGFBs4ymFCNtlvml10s6MCGFlydnQw/exec";
 
