@@ -240,15 +240,15 @@
       </div>
 
       <div class="lula-card">
-        <h2><strong>Let's find out if Lula is your tribe.</strong></h2>
+        <h2><strong>Let's find out if we belong together.</strong></h2>
         <p><strong>We're interested in more than your experience.</strong></p>
         <br>
         <p>
-          Your application, resume, VIA Character Strengths, and written responses help us understand who you are, how you work with others, and whether Lula is the right tribe for you—and you for Lula.
+          Your application, resume, VIA Character Strengths, and written responses help us understand who you are, how you work with others, and whether Lula is the right team for you — and you for Lula.
         </p>
         <br>
         <p>
-          Take your time, be yourself, and answer thoughtfully. There are no perfect answers—only honest ones.
+          Take your time, be yourself, and answer thoughtfully. There are no perfect answers — only honest ones.
         </p>
       </div>
 
