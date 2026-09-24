@@ -5,7 +5,8 @@
     console.error("Lula application root not found.");
     return;
   }
-/* this URL should stay constant */
+
+  /* this URL should stay constant */
   const APPS_SCRIPT_URL =
     "https://script.google.com/macros/s/AKfycbzPhX0aToJCm2-CSd20oFti282uPMp3kEgBFwtvnGFBs4ymFCNtlvml10s6MCGFlydnQw/exec";
 
@@ -26,7 +27,7 @@
         color: inherit;
         font-family: 'Poppins', sans-serif;
       }
-      
+
       .lula-app * {
         font-family: inherit;
       }
@@ -102,12 +103,12 @@
         align-items: flex-start;
         margin-top: 16px;
       }
-      
+
       .lula-checkbox-row input {
         flex-shrink: 0;
         margin-top: 4px;
       }
-      
+
       .lula-checkbox-row label {
         flex: 1;
         line-height: 1.4;
@@ -120,13 +121,13 @@
         margin-top: 8px;
         justify-items: start;
       }
-      
+
       .lula-day-option {
         display: flex;
         align-items: center;
         gap: 8px;
       }
-      
+
       .lula-day-option input {
         margin: 0;
       }
@@ -255,15 +256,15 @@
       <div class="lula-card">
         <h2><strong>About You</strong></h2>
 
-          <div>
-            <label class="lula-label" for="firstName">First Name *</label>
-            <input class="lula-input" id="firstName" name="firstName" required>
-          </div>
+        <div>
+          <label class="lula-label" for="firstName">First Name *</label>
+          <input class="lula-input" id="firstName" name="firstName" required>
+        </div>
 
-          <div>
-            <label class="lula-label" for="lastName">Last Name *</label>
-            <input class="lula-input" id="lastName" name="lastName" required>
-          </div>
+        <div>
+          <label class="lula-label" for="lastName">Last Name *</label>
+          <input class="lula-input" id="lastName" name="lastName" required>
+        </div>
 
         <label class="lula-label" for="preferredName">Preferred Name</label>
         <input class="lula-input" id="preferredName" name="preferredName">
@@ -444,6 +445,11 @@
   const status = document.getElementById("lulaStatus");
   const phoneInput = document.getElementById("phone");
 
+  // DUPLICATE-SUBMISSION PROTECTION:
+  // Get the submit button so it can be disabled immediately
+  // after a valid submission begins.
+  const submitButton = form.querySelector('button[type="submit"]');
+
   phoneInput.addEventListener("input", function (e) {
     let value = e.target.value.replace(/\D/g, "");
 
@@ -504,6 +510,13 @@
       return;
     }
 
+    // DUPLICATE-SUBMISSION PROTECTION:
+    // Disable the button before any file processing or network request begins.
+    submitButton.disabled = true;
+    submitButton.textContent = "Submitting...";
+    submitButton.style.cursor = "not-allowed";
+    submitButton.style.opacity = "0.65";
+
     status.className = "lula-status success";
     status.innerHTML = "<strong>Thank you for applying to join Lula Coffee Co.</strong><br><br>Please wait while we securely upload your application, resume, and VIA Character Strengths results to the Lula Hiring System.<br><br><strong>This may take a minute or two. Please don't close this page until the upload is complete.</strong>";
 
@@ -553,11 +566,22 @@
 
       form.reset();
 
+      // Intentionally DO NOT re-enable the button here.
+      // The application has been submitted successfully.
+
     } catch (error) {
       console.error(error);
 
       status.className = "lula-status error";
-      status.textContent = error.message || "Something went wrong. Please try again.";
+      status.textContent =
+        error.message || "Something went wrong. Please try again.";
+
+      // DUPLICATE-SUBMISSION PROTECTION:
+      // Submission failed, so allow the applicant to try again.
+      submitButton.disabled = false;
+      submitButton.textContent = "Submit Application";
+      submitButton.style.cursor = "pointer";
+      submitButton.style.opacity = "1";
     }
   });
 })();
