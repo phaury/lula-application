@@ -562,7 +562,7 @@
 
       status.className = "lula-status success";
       status.innerHTML =
-        "<strong>Thank you for applying to join Lula Coffee Co.</strong><br><br>Your application has been successfully received.<br><br><strong>Now let's find out if Lula is your tribe.</strong><br><br>We'll thoughtfully review your application, resume, VIA Character Strengths, and written responses to learn more about who you are and how you show up for others.<br><br>If it looks like there may be a strong mutual fit, we'll reach out with the next step in our hiring process.<br><br>Thank you for the time, care, and effort you've invested in your application. We look forward to getting to know you.";
+        "<strong>Thank you for applying to join Lula Coffee Co.</strong><br><br>Your application has been successfully received.<br><br><strong>Now let's find out if Lula and you belong.</strong><br><br>We'll thoughtfully review your application, resume, VIA Character Strengths, and written responses to learn more about who you are and how you show up for others.<br><br>If it looks like there may be a strong mutual fit, we'll reach out with the next step in our hiring process.<br><br>Thank you for the time, care, and effort you've invested in your application. We look forward to getting to know you.";
 
       form.reset();
 
