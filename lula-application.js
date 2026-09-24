@@ -269,6 +269,14 @@
         <label class="lula-label" for="preferredName">Preferred Name</label>
         <input class="lula-input" id="preferredName" name="preferredName">
 
+        <label class="lula-label" for="personalPronouns">Personal Pronouns (optional)</label>
+        <input
+          class="lula-input"
+          id="personalPronouns"
+          name="personalPronouns"
+          placeholder="Example: she/her, he/him, they/them"
+        >
+
         <label class="lula-label" for="email">Email *</label>
         <input class="lula-input" id="email" name="email" type="email" required>
 
@@ -530,6 +538,7 @@
         firstName: formData.get("firstName"),
         lastName: formData.get("lastName"),
         preferredName: formData.get("preferredName"),
+        personalPronouns: formData.get("personalPronouns"),
         email: formData.get("email"),
         phone: formData.get("phone"),
         primaryStore: formData.get("primaryStore"),
