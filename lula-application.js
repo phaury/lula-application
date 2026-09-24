@@ -560,14 +560,39 @@
         body: JSON.stringify(payload)
       });
 
-      status.className = "lula-status success";
-      status.innerHTML =
-        "<strong>Thank you for applying to join Lula Coffee Co.</strong><br><br>Your application has been successfully received.<br><br><strong>Now let's find out if Lula and you belong.</strong><br><br>We'll thoughtfully review your application, resume, VIA Character Strengths, and written responses to learn more about who you are and how you show up for others.<br><br>If it looks like there may be a strong mutual fit, we'll reach out with the next step in our hiring process.<br><br>Thank you for the time, care, and effort you've invested in your application. We look forward to getting to know you.";
+      // SUCCESS:
+      // Replace the entire application with a confirmation card.
+      form.innerHTML = `
+        <div class="lula-card">
+          <h2><strong>Thank you for applying to join Lula Coffee Co.</strong></h2>
 
-      form.reset();
+          <p>Your application has been successfully received.</p>
 
-      // Intentionally DO NOT re-enable the button here.
-      // The application has been submitted successfully.
+          <p><strong>Now let's find out if Lula and you belong.</strong></p>
+
+          <p>
+            We'll thoughtfully review your application, resume, VIA Character Strengths,
+            and written responses to learn more about who you are and how you show up for others.
+          </p>
+
+          <p>
+            If it looks like there may be a strong mutual fit, we'll reach out with the
+            next step in our hiring process.
+          </p>
+
+          <p>
+            Thank you for the time, care, and effort you've invested in your application.
+            We look forward to getting to know you.
+          </p>
+        </div>
+      `;
+
+      // Bring the applicant back to the confirmation
+      // instead of leaving them at the bottom of the old application.
+      form.scrollIntoView({
+        behavior: "smooth",
+        block: "start"
+      });
 
     } catch (error) {
       console.error(error);
